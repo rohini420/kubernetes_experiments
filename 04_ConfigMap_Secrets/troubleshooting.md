@@ -56,7 +56,7 @@ The environment variable `ME_CONFIG_MONGODB_SERVER` was set to `mongo`, but the 
 ```yaml
 env:
 - name: ME_CONFIG_MONGODB_SERVER
-  value: mongo  # ❌ Service doesn't exist
+  value: mongodb-service  # ❌ Service doesn't exist
 ```
 
 **After (correct)**:
@@ -263,7 +263,7 @@ kubectl exec -it <mongo-express-pod> -- nslookup mongo
 
 # Test connectivity
 kubectl exec -it <mongo-express-pod> -- ping mongo
-# PING mongodb-service (10.96.45.123): 56 data bytes
+# PING mongo (10.96.45.123): 56 data bytes
 
 # Test port connectivity
 kubectl exec -it <mongo-express-pod> -- telnet mongo 27017
@@ -431,7 +431,7 @@ kubectl describe pod mongo-express-xxx
 kubectl exec -it mongo-express-xxx -- ping mongodb-service
 kubectl exec -it mongo-express-xxx -- nslookup mongodb-service
 kubectl rollout restart deployment mongo-express
-kubectl get secret mongodb-secret -o yaml
+kubectl get secret mongo-secret -o yaml
 echo "YWRtaW4=" | base64 --decode
 echo "YWRtaW4xMjM=" | base64 --decode
 gcloud compute firewall-rules create allow-mongo-express --allow tcp:8081 --target-tags=gke-demo-cluster-default-pool-abc123 --direction=INGRESS --priority=1000 --network=default
