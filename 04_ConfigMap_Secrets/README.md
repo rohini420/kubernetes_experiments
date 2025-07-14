@@ -250,7 +250,7 @@ kubectl get all | grep -E "(mongo|express)"
 
 👤 **Rohini Swathi Bhatlapenumarthi**  
 📅 **July 2025**  
-🔗 **[LinkedIn Profile](#)**  
+🔗 **[LinkedIn Profile](https://www.linkedin.com/in/rohini-swathi-b-6a3029119)**  
 📁 **[Full Troubleshooting Log](./troubleshooting.md)**
 
 ---
